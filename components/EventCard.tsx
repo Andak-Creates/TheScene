@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { getOptimizedImageUrl } from '@/lib/media'
 
 interface Party {
   id: string
@@ -54,7 +55,7 @@ export default function EventCard({ party }: { party: Party }) {
         <div style={{ position: 'relative', aspectRatio: '4/5', background: 'rgba(255,255,255,0.04)' }}>
           {imageUrl ? (
             <Image
-              src={imageUrl}
+              src={getOptimizedImageUrl(imageUrl, 600) || imageUrl}
               alt={party.title}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -2,6 +2,7 @@
 import { supabase } from '@/lib/supabase'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getOptimizedImageUrl } from '@/lib/media'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
@@ -96,7 +97,14 @@ export default async function PartyPage({ params }: PageProps) {
         aspectRatio: '16/9', overflow: 'hidden', background: 'rgba(255,255,255,0.03)',
       }}>
         {imageUrl ? (
-          <Image src={imageUrl} alt={party.title} fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
+          <Image 
+            src={getOptimizedImageUrl(imageUrl, 1200) || imageUrl} 
+            alt={party.title} 
+            fill 
+            priority 
+            sizes="100vw" 
+            style={{ objectFit: 'cover' }} 
+          />
         ) : (
           <div style={{ height: 520, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 80, opacity: 0.15 }}>🎉</div>
         )}
