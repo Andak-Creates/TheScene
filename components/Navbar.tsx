@@ -17,11 +17,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Browse Events', href: '/browse' },
     { name: 'Features', href: '/#features' },
     { name: 'How It Works', href: '/#how-it-works' },
     { name: 'For Hosts', href: '/#for-hosts' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Browse Events', href: '/browse' },
   ];
 
   return (

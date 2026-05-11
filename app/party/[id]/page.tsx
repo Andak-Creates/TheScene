@@ -92,10 +92,9 @@ export default async function PartyPage({ params }: PageProps) {
   return (
     <div style={{ minHeight: '100vh', paddingBottom: 100 }}>
       {/* Hero Image */}
-      <div style={{
-        position: 'relative', width: '100%', maxHeight: 520,
-        aspectRatio: '16/9', overflow: 'hidden', background: 'rgba(255,255,255,0.03)',
-      }}>
+      <div 
+        className="relative w-full overflow-hidden bg-white/5 md:max-h-[520px] h-[50vh] md:h-auto md:aspect-video"
+      >
         {imageUrl ? (
           <Image 
             src={getOptimizedImageUrl(imageUrl, 1200) || imageUrl} 
@@ -106,12 +105,9 @@ export default async function PartyPage({ params }: PageProps) {
             style={{ objectFit: 'cover' }} 
           />
         ) : (
-          <div style={{ height: 520, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 80, opacity: 0.15 }}>🎉</div>
+          <div className="flex items-center justify-center text-8xl opacity-15 h-full">🎉</div>
         )}
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, rgba(10,0,16,0.1) 0%, rgba(10,0,16,0.8) 100%)',
-        }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,0,16,0.1)] to-[rgba(10,0,16,0.8)]" />
       </div>
 
       {/* Content */}

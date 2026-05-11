@@ -27,7 +27,7 @@ export default function EmailConfirmed() {
           </p>
           
           <div className="space-y-4">
-            <Button href="thescene://" variant="primary" className="w-full py-4 text-lg">
+            <Button href="thescene://login" variant="primary" className="w-full py-4 text-lg">
               Open TheScene App
             </Button>
             <Button href="/" variant="outline" className="w-full py-4 text-lg">

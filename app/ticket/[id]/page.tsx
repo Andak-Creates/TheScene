@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import QRViewer from "@/components/QRViewer";
 import Link from "next/link";
+import DownloadAppModal from "@/components/DownloadAppModal";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -61,6 +62,7 @@ export default async function TicketPage({ params }: PageProps) {
         padding: "120px 24px 100px",
       }}
     >
+      <DownloadAppModal />
       <div style={{ width: "100%", maxWidth: 480 }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>

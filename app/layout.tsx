@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import { AOSInit } from "@/components/AOSInit";
 import OpenInAppBanner from "@/components/OpenInAppBanner";
+import AppEntryModal from "@/components/AppEntryModal";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
     description: "Your next party starts here. Discover the best local parties, events, and buy tickets instantly with TheScene app.",
     images: ["/thescenne-logo.png"],
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -57,6 +62,7 @@ export default function RootLayout({
         className={`${syne.variable} ${dmSans.variable} font-body antialiased bg-theme-bg text-theme-white`}
       >
         <OpenInAppBanner />
+        <AppEntryModal />
         <AOSInit />
         <Navbar />
         {children}
